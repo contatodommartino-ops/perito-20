@@ -13,23 +13,13 @@ const AboutPage = () => {
         </div>
       </section>
 
-      <section className="py-24 bg-white">
+      <section className="py-24 bg-white border-y border-border">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            <div className="relative">
-              <div className="aspect-[4/5] bg-secondary rounded-lg overflow-hidden grayscale">
-                <img
-                  src="https://images.pexels.com/photos/8731037/pexels-photo-8731037.jpeg"
-                  alt="Escritório Pericial"
-                  className="w-full h-full object-cover"
-                />
-              </div>
-            </div>
-
-            <div className="space-y-8">
-              <div>
-                <h2 className="text-3xl font-bold mb-6">Excelência e Imparcialidade</h2>
-                <div className="space-y-4 text-muted-foreground leading-relaxed">
+          <div className="max-w-5xl mx-auto">
+            <div className="space-y-12">
+              <div className="bg-secondary/30 p-12 rounded-lg border-l-8 border-primary shadow-sm">
+                <h2 className="text-3xl font-bold mb-8">Excelência e Imparcialidade</h2>
+                <div className="space-y-6 text-muted-foreground text-lg leading-relaxed max-w-3xl">
                   <p>
                     A Veritas Assessoria nasceu do compromisso com a verdade técnica e a ciência pericial. Atuamos em casos complexos de grafotécnica e documentoscopia, sempre pautados pelo rigor metodológico.
                   </p>
@@ -39,7 +29,7 @@ const AboutPage = () => {
                 </div>
               </div>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <div className="flex gap-4">
                   <div className="bg-primary/5 p-2 rounded-full h-fit">
                     <Award className="h-5 w-5 text-primary" />

@@ -52,14 +52,7 @@ const Index = () => {
   return (
     <div className="flex flex-col w-full">
       {/* Hero Section */}
-      <section className="relative h-[90vh] flex items-center justify-center overflow-hidden bg-primary text-white">
-        <div className="absolute inset-0 z-0">
-          <img
-            src="https://images.pexels.com/photos/8731037/pexels-photo-8731037.jpeg"
-            alt="Perícia e Documentos"
-            className="w-full h-full object-cover opacity-20"
-          />
-        </div>
+      <section className="relative h-[80vh] flex items-center justify-center overflow-hidden bg-primary text-white border-b-8 border-accent">
         <div className="container relative z-10 px-4 text-center max-w-4xl mx-auto">
           <h1 className="text-4xl md:text-6xl font-bold tracking-tight mb-6 animate-in fade-in slide-in-from-bottom-8 duration-1000">
             Autoridade Técnica, <br />
@@ -126,44 +119,37 @@ const Index = () => {
       </section>
 
       {/* Target Audience / Callouts */}
-      <section className="py-24 bg-white">
+      <section className="py-24 bg-white border-y border-border">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
-            <div className="relative">
-              <img
-                src="https://images.pexels.com/photos/7841838/pexels-photo-7841838.jpeg"
-                alt="Documentos e Análise"
-                className="rounded-lg shadow-2xl grayscale hover:grayscale-0 transition-all duration-700"
-              />
-            </div>
+          <div className="max-w-4xl mx-auto">
             <div className="space-y-8">
-              <h3 className="text-3xl font-bold leading-tight">Suporte Técnico Estratégico para Profissionais do Direito</h3>
-              <div className="space-y-6">
-                <div className="flex gap-4">
-                  <div className="mt-1 bg-primary/10 p-2 rounded-full h-fit">
-                    <Shield className="h-5 w-5 text-primary" />
+              <h3 className="text-3xl font-bold leading-tight text-center mb-12">Suporte Técnico Estratégico para Profissionais do Direito</h3>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div className="flex flex-col items-center text-center gap-4 p-6 bg-secondary/30 rounded-lg">
+                  <div className="bg-primary/10 p-4 rounded-full">
+                    <Shield className="h-8 w-8 text-primary" />
                   </div>
                   <div>
-                    <h4 className="font-bold mb-1">Para Advogados e Escritórios</h4>
-                    <p className="text-muted-foreground text-sm">Elaboração de quesitos estratégicos e pareceres técnicos fundamentados para fortalecer a tese defensiva.</p>
+                    <h4 className="font-bold mb-2">Para Advogados</h4>
+                    <p className="text-muted-foreground text-sm leading-relaxed">Elaboração de quesitos estratégicos e pareceres técnicos fundamentados para fortalecer a tese defensiva.</p>
                   </div>
                 </div>
-                <div className="flex gap-4">
-                  <div className="mt-1 bg-primary/10 p-2 rounded-full h-fit">
-                    <Search className="h-5 w-5 text-primary" />
+                <div className="flex flex-col items-center text-center gap-4 p-6 bg-secondary/30 rounded-lg">
+                  <div className="bg-primary/10 p-4 rounded-full">
+                    <Search className="h-8 w-8 text-primary" />
                   </div>
                   <div>
-                    <h4 className="font-bold mb-1">Para Empresas e Instituições</h4>
-                    <p className="text-muted-foreground text-sm">Prevenção e detecção de fraudes internas e externas através de análise documental rigorosa.</p>
+                    <h4 className="font-bold mb-2">Para Empresas</h4>
+                    <p className="text-muted-foreground text-sm leading-relaxed">Prevenção e detecção de fraudes internas e externas através de análise documental rigorosa.</p>
                   </div>
                 </div>
-                <div className="flex gap-4">
-                  <div className="mt-1 bg-primary/10 p-2 rounded-full h-fit">
-                    <User className="h-5 w-5 text-primary" />
+                <div className="flex flex-col items-center text-center gap-4 p-6 bg-secondary/30 rounded-lg">
+                  <div className="bg-primary/10 p-4 rounded-full">
+                    <User className="h-8 w-8 text-primary" />
                   </div>
                   <div>
-                    <h4 className="font-bold mb-1">Para Pessoas Físicas</h4>
-                    <p className="text-muted-foreground text-sm">Análise de autenticidade em contratos, cheques e documentos particulares em situações de litígio.</p>
+                    <h4 className="font-bold mb-2">Para Particulares</h4>
+                    <p className="text-muted-foreground text-sm leading-relaxed">Análise de autenticidade em contratos, cheques e documentos particulares em situações de litígio.</p>
                   </div>
                 </div>
               </div>

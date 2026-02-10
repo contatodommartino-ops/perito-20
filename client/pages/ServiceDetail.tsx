@@ -8,7 +8,6 @@ const servicesData = {
     title: "Perícia Grafotécnica Extrajudicial",
     description: "Análise técnica de assinaturas, rubricas e manuscritos, com emissão de laudo técnico fundamentado.",
     icon: <Shield className="h-12 w-12 text-primary" />,
-    image: "https://images.pexels.com/photos/175045/pexels-photo-175045.jpeg",
     details: "A perícia grafotécnica extrajudicial é fundamental para conferir segurança em transações que envolvam documentos manuscritos. Através de exames comparativos e técnicos, identificamos a autoria gráfica com precisão científica.",
     target: [
       "Pessoas físicas (fraudes, assinaturas contestadas, contratos)",
@@ -26,7 +25,6 @@ const servicesData = {
     title: "Assistência Técnica Grafotécnica",
     description: "Atuação como assistente técnico em processos judiciais acompanhando perícias oficiais.",
     icon: <Search className="h-12 w-12 text-primary" />,
-    image: "https://images.pexels.com/photos/8731037/pexels-photo-8731037.jpeg",
     details: "Atuamos como o braço técnico da parte no processo judicial. O assistente técnico garante que a perícia oficial siga os preceitos técnicos corretos e apresenta quesitos e pareceres que fundamentam a tese jurídica.",
     target: [
       "Advogados",
@@ -43,7 +41,6 @@ const servicesData = {
     title: "Perícia em Documentoscopia",
     description: "Análise técnica de documentos para identificação de fraudes e adulterações.",
     icon: <FileText className="h-12 w-12 text-primary" />,
-    image: "https://images.pexels.com/photos/7841838/pexels-photo-7841838.jpeg",
     details: "A documentoscopia abrange o exame do suporte (papel), tintas, impressões e elementos de segurança. É essencial para detectar montagens, rasuras ou alterações materiais em documentos públicos ou particulares.",
     target: [
       "Empresas e Instituições",
@@ -61,7 +58,6 @@ const servicesData = {
     title: "Investigação Técnica In Loco para Usucapião",
     description: "Serviço técnico de apoio à usucapião com diligência presencial no imóvel.",
     icon: <Home className="h-12 w-12 text-primary" />,
-    image: "https://images.pexels.com/photos/7821674/pexels-photo-7821674.jpeg",
     details: "Realizamos o levantamento técnico necessário para fundamentar processos de usucapião. A diligência 'in loco' permite a coleta de evidências fáticas sobre a posse e a situação do imóvel, gerando um relatório circunstanciado.",
     target: [
       "Advogados imobiliários",
@@ -96,7 +92,7 @@ const ServiceDetail = () => {
   return (
     <div className="flex flex-col w-full">
       {/* Hero Section */}
-      <section className="bg-primary text-white py-20 lg:py-32">
+      <section className="bg-primary text-white py-24 border-b-8 border-accent">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl">
             <div className="mb-6">{service.icon}</div>
@@ -109,22 +105,22 @@ const ServiceDetail = () => {
       </section>
 
       {/* Content Section */}
-      <section className="py-24 bg-white">
+      <section className="py-24 bg-white border-b border-border">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
-            <div className="space-y-8">
-              <div>
-                <h2 className="text-2xl font-bold mb-4">Sobre o Serviço</h2>
-                <p className="text-muted-foreground leading-relaxed">
+            <div className="space-y-12">
+              <div className="bg-secondary/30 p-10 rounded-lg border-l-8 border-primary">
+                <h2 className="text-2xl font-bold mb-6">Sobre o Serviço</h2>
+                <p className="text-muted-foreground leading-relaxed text-lg">
                   {service.details}
                 </p>
               </div>
 
-              <div>
-                <h2 className="text-2xl font-bold mb-4">Público-Alvo</h2>
-                <ul className="space-y-3">
+              <div className="bg-white p-8 rounded-lg border border-border shadow-sm">
+                <h2 className="text-2xl font-bold mb-6">Público-Alvo</h2>
+                <ul className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   {service.target.map((item: string, i: number) => (
-                    <li key={i} className="flex items-center gap-3">
+                    <li key={i} className="flex items-center gap-3 text-sm font-medium p-3 bg-secondary/20 rounded-md">
                       <CheckCircle2 className="h-5 w-5 text-primary shrink-0" />
                       <span>{item}</span>
                     </li>
@@ -132,33 +128,26 @@ const ServiceDetail = () => {
                 </ul>
               </div>
 
-              <div className="pt-8">
-                <Button asChild size="lg" className="bg-primary hover:bg-primary/90">
+              <div className="pt-4 flex justify-center lg:justify-start">
+                <Button asChild size="lg" className="bg-primary hover:bg-primary/90 px-12 py-8 text-xl">
                   <Link to="/contato">Solicitar Orçamento</Link>
                 </Button>
               </div>
             </div>
 
             <div className="space-y-8">
-              <div className="bg-secondary/50 p-8 rounded-lg border border-border">
-                <h2 className="text-2xl font-bold mb-6">O que realizamos</h2>
-                <div className="space-y-4">
+              <div className="bg-secondary/50 p-10 rounded-lg border border-border shadow-md">
+                <h2 className="text-2xl font-bold mb-8">Etapas da Atuação Técnica</h2>
+                <div className="space-y-6">
                   {service.features.map((feature: string, i: number) => (
-                    <div key={i} className="flex gap-4 p-4 bg-white rounded-md shadow-sm">
-                      <div className="text-primary font-bold text-xl">{i + 1}</div>
-                      <p className="font-medium">{feature}</p>
+                    <div key={i} className="flex gap-6 p-6 bg-white rounded-lg border border-border shadow-sm">
+                      <div className="flex items-center justify-center bg-primary text-white font-bold text-xl h-10 w-10 shrink-0 rounded-full">
+                        {i + 1}
+                      </div>
+                      <p className="font-bold text-lg flex items-center">{feature}</p>
                     </div>
                   ))}
                 </div>
-              </div>
-              
-              <div className="relative rounded-lg overflow-hidden h-64 shadow-xl">
-                <img
-                  src={service.image}
-                  alt={service.title}
-                  className="w-full h-full object-cover grayscale"
-                />
-                <div className="absolute inset-0 bg-primary/20"></div>
               </div>
             </div>
           </div>
