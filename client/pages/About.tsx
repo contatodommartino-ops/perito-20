@@ -31,10 +31,10 @@ const AboutPage = () => {
                 <h2 className="text-3xl font-bold mb-6">Excelência e Imparcialidade</h2>
                 <div className="space-y-4 text-muted-foreground leading-relaxed">
                   <p>
-                    A Veritas Assessoria nasceu do compromisso com a verdade técnica e a ciência pericial. Sob a liderança de nosso perito principal, atuamos em casos complexos de grafotécnica e documentoscopia, sempre pautados pelo rigor metodológico.
+                    A Veritas Assessoria nasceu do compromisso com a verdade técnica e a ciência pericial. Atuamos em casos complexos de grafotécnica e documentoscopia, sempre pautados pelo rigor metodológico.
                   </p>
                   <p>
-                    Nossa atuação é voltada para a prestação de serviços de alta qualidade, garantindo que a prova técnica seja apresentada de forma clara, objetiva e irrefutável, seja no âmbito judicial ou extrajudicial.
+                    Nossa atuação é voltada para a prestação de serviços de alta qualidade, garantindo que a prova técnica seja apresentada de forma clara e objetiva, seja no âmbito judicial ou extrajudicial.
                   </p>
                 </div>
               </div>
