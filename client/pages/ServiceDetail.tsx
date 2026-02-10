@@ -26,7 +26,7 @@ const servicesData = {
     title: "Assistência Técnica Grafotécnica",
     description: "Atuação como assistente técnico em processos judiciais acompanhando perícias oficiais.",
     icon: <Search className="h-12 w-12 text-primary" />,
-    image: "https://images.pexels.com/photos/8152742/pexels-photo-8152742.jpeg",
+    image: "https://images.pexels.com/photos/8731037/pexels-photo-8731037.jpeg",
     details: "Atuamos como o braço técnico da parte no processo judicial. O assistente técnico garante que a perícia oficial siga os preceitos técnicos corretos e apresenta quesitos e pareceres que fundamentam a tese jurídica.",
     target: [
       "Advogados",
@@ -43,7 +43,7 @@ const servicesData = {
     title: "Perícia em Documentoscopia",
     description: "Análise técnica de documentos para identificação de fraudes e adulterações.",
     icon: <FileText className="h-12 w-12 text-primary" />,
-    image: "https://images.pexels.com/photos/175045/pexels-photo-175045.jpeg",
+    image: "https://images.pexels.com/photos/7841838/pexels-photo-7841838.jpeg",
     details: "A documentoscopia abrange o exame do suporte (papel), tintas, impressões e elementos de segurança. É essencial para detectar montagens, rasuras ou alterações materiais em documentos públicos ou particulares.",
     target: [
       "Empresas e Instituições",
@@ -61,7 +61,7 @@ const servicesData = {
     title: "Investigação Técnica In Loco para Usucapião",
     description: "Serviço técnico de apoio à usucapião com diligência presencial no imóvel.",
     icon: <Home className="h-12 w-12 text-primary" />,
-    image: "https://images.pexels.com/photos/8152742/pexels-photo-8152742.jpeg",
+    image: "https://images.pexels.com/photos/7821674/pexels-photo-7821674.jpeg",
     details: "Realizamos o levantamento técnico necessário para fundamentar processos de usucapião. A diligência 'in loco' permite a coleta de evidências fáticas sobre a posse e a situação do imóvel, gerando um relatório circunstanciado.",
     target: [
       "Advogados imobiliários",

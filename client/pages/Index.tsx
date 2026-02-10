@@ -55,7 +55,7 @@ const Index = () => {
       <section className="relative h-[90vh] flex items-center justify-center overflow-hidden bg-primary text-white">
         <div className="absolute inset-0 z-0">
           <img
-            src="https://images.pexels.com/photos/175045/pexels-photo-175045.jpeg"
+            src="https://images.pexels.com/photos/8731037/pexels-photo-8731037.jpeg"
             alt="Perícia e Documentos"
             className="w-full h-full object-cover opacity-20"
           />
@@ -129,10 +129,10 @@ const Index = () => {
       <section className="py-24 bg-white">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
-            <div>
+            <div className="relative">
               <img
-                src="https://images.pexels.com/photos/8152742/pexels-photo-8152742.jpeg"
-                alt="Lawyer office"
+                src="https://images.pexels.com/photos/7841838/pexels-photo-7841838.jpeg"
+                alt="Documentos e Análise"
                 className="rounded-lg shadow-2xl grayscale hover:grayscale-0 transition-all duration-700"
               />
             </div>

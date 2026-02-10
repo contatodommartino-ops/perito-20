@@ -151,9 +151,9 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
               <nav className="flex flex-col space-y-2 text-sm text-white/60">
                 <Link to="/sobre" className="hover:text-white transition-colors">Sobre o Perito</Link>
                 <Link to="/contato" className="hover:text-white transition-colors">Contato</Link>
-                <Link to="/politica-privacidade" className="hover:text-white transition-colors">Política de Privacidade</Link>
-                <Link to="/politica-cookies" className="hover:text-white transition-colors">Política de Cookies</Link>
-                <Link to="/termos-uso" className="hover:text-white transition-colors">Termos de Uso</Link>
+                <Link to="/legal/politica-privacidade" className="hover:text-white transition-colors">Política de Privacidade</Link>
+                <Link to="/legal/politica-cookies" className="hover:text-white transition-colors">Política de Cookies</Link>
+                <Link to="/legal/termos-uso" className="hover:text-white transition-colors">Termos de Uso</Link>
               </nav>
             </div>
 

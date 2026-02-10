@@ -19,8 +19,8 @@ const AboutPage = () => {
             <div className="relative">
               <div className="aspect-[4/5] bg-secondary rounded-lg overflow-hidden grayscale">
                 <img
-                  src="https://images.pexels.com/photos/8152742/pexels-photo-8152742.jpeg"
-                  alt="Perito Grafotécnico"
+                  src="https://images.pexels.com/photos/8731037/pexels-photo-8731037.jpeg"
+                  alt="Escritório Pericial"
                   className="w-full h-full object-cover"
                 />
               </div>

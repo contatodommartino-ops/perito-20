@@ -36,7 +36,7 @@ const CookieBanner = () => {
             <div>
               <h4 className="font-bold text-foreground mb-1">Privacidade e Cookies</h4>
               <p className="text-sm text-muted-foreground leading-relaxed max-w-2xl">
-                Utilizamos cookies e tecnologias semelhantes para melhorar sua experiência em nosso site, analisar o tráfego e personalizar conteúdo, de acordo com nossa <a href="/politica-privacidade" className="underline hover:text-primary transition-colors">Política de Privacidade</a>.
+                Utilizamos cookies e tecnologias semelhantes para melhorar sua experiência em nosso site, analisar o tráfego e personalizar conteúdo, de acordo com nossa <a href="/legal/politica-privacidade" className="underline hover:text-primary transition-colors">Política de Privacidade</a>.
               </p>
             </div>
           </div>
