@@ -53,6 +53,13 @@ const Index = () => {
     <div className="flex flex-col w-full">
       {/* Hero Section */}
       <section className="relative h-[80vh] flex items-center justify-center overflow-hidden bg-primary text-white border-b-8 border-accent">
+        <div className="absolute inset-0 z-0">
+          <img
+            src="https://images.pexels.com/photos/8731037/pexels-photo-8731037.jpeg"
+            alt="Fundo Institucional"
+            className="w-full h-full object-cover opacity-20"
+          />
+        </div>
         <div className="container relative z-10 px-4 text-center max-w-4xl mx-auto">
           <h1 className="text-4xl md:text-6xl font-bold tracking-tight mb-6 animate-in fade-in slide-in-from-bottom-8 duration-1000">
             Autoridade Técnica, <br />
