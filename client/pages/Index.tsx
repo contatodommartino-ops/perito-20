@@ -55,7 +55,7 @@ const Index = () => {
       <section className="relative h-[80vh] flex items-center justify-center overflow-hidden bg-primary text-white border-b-8 border-accent">
         <div className="absolute inset-0 z-0">
           <img
-            src="https://images.pexels.com/photos/175045/pexels-photo-175045.jpeg"
+            src="https://images.pexels.com/photos/7841844/pexels-photo-7841844.jpeg"
             alt="Fundo Institucional"
             className="w-full h-full object-cover opacity-20"
           />
