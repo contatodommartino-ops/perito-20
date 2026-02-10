@@ -24,10 +24,6 @@ const AboutPage = () => {
                   className="w-full h-full object-cover"
                 />
               </div>
-              <div className="absolute -bottom-6 -right-6 bg-white p-8 shadow-xl rounded-lg hidden md:block">
-                <p className="text-primary font-bold text-2xl">10+ Anos</p>
-                <p className="text-muted-foreground text-sm uppercase tracking-wider">De Experiência Técnica</p>
-              </div>
             </div>
 
             <div className="space-y-8">
@@ -49,17 +45,8 @@ const AboutPage = () => {
                     <Award className="h-5 w-5 text-primary" />
                   </div>
                   <div>
-                    <h4 className="font-bold text-sm">Especialização</h4>
-                    <p className="text-xs text-muted-foreground">Pós-graduado em Perícia Grafotécnica e Documentoscopia.</p>
-                  </div>
-                </div>
-                <div className="flex gap-4">
-                  <div className="bg-primary/5 p-2 rounded-full h-fit">
-                    <BookOpen className="h-5 w-5 text-primary" />
-                  </div>
-                  <div>
-                    <h4 className="font-bold text-sm">Formação Contínua</h4>
-                    <p className="text-xs text-muted-foreground">Participação ativa em congressos e atualizações na área pericial.</p>
+                    <h4 className="font-bold text-sm">Formação Técnica</h4>
+                    <p className="text-xs text-muted-foreground">Perito certificado em Perícia Grafotécnica e Documentoscopia.</p>
                   </div>
                 </div>
                 <div className="flex gap-4">
@@ -68,7 +55,7 @@ const AboutPage = () => {
                   </div>
                   <div>
                     <h4 className="font-bold text-sm">Atuação Jurídica</h4>
-                    <p className="text-xs text-muted-foreground">Vasta experiência como assistente técnico em diversos tribunais.</p>
+                    <p className="text-xs text-muted-foreground">Experiência como assistente técnico em processos judiciais e extrajudiciais.</p>
                   </div>
                 </div>
                 <div className="flex gap-4">
@@ -77,7 +64,7 @@ const AboutPage = () => {
                   </div>
                   <div>
                     <h4 className="font-bold text-sm">Ética Profissional</h4>
-                    <p className="text-xs text-muted-foreground">Compromisso inabalável com o código de ética dos peritos.</p>
+                    <p className="text-xs text-muted-foreground">Compromisso inabalável com o rigor técnico e imparcialidade.</p>
                   </div>
                 </div>
               </div>
