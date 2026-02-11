@@ -65,14 +65,19 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
                 <span className="sr-only">Menu</span>
               </Button>
             </SheetTrigger>
-            <SheetContent side="right" className="w-[300px] sm:w-[400px] p-0 border-l border-border bg-white">
+            <SheetContent side="right" className="w-[300px] sm:w-[400px] p-0 border-l border-border bg-white" translate="no">
               <div className="flex flex-col h-full">
-                <SheetHeader className="p-6 border-b border-border text-left">
-                  <SheetTitle className="font-bold tracking-tighter text-lg uppercase">Menu</SheetTitle>
-                  <SheetDescription className="sr-only">
-                    Menu de navegação da Veritas Assessoria
-                  </SheetDescription>
-                </SheetHeader>
+                {/* Clean header to avoid any ghost text or automatic descriptions */}
+                <div className="p-8 border-b border-border">
+                  <h2 className="font-bold tracking-tighter text-xl uppercase text-primary">Menu</h2>
+                </div>
+
+                {/* Hidden components for accessibility without content that could be misread */}
+                <div className="sr-only">
+                  <SheetTitle>Menu de Navegação</SheetTitle>
+                  <SheetDescription>Acesse as páginas da Veritas Assessoria</SheetDescription>
+                </div>
+
                 <nav className="flex-1 overflow-y-auto p-6">
                   <div className="space-y-4">
                     {menuItems.map((item, idx) => (
