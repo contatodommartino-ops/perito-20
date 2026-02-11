@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import {
   Sheet,
   SheetContent,
+  SheetDescription,
   SheetHeader,
   SheetTitle,
   SheetTrigger,
@@ -66,8 +67,11 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
             </SheetTrigger>
             <SheetContent side="right" className="w-[300px] sm:w-[400px] p-0 border-l border-border bg-white">
               <div className="flex flex-col h-full">
-                <SheetHeader className="p-6 border-b border-border">
-                  <SheetTitle className="text-left font-bold tracking-tighter text-lg">Menu</SheetTitle>
+                <SheetHeader className="p-6 border-b border-border text-left">
+                  <SheetTitle className="font-bold tracking-tighter text-lg uppercase">Menu</SheetTitle>
+                  <SheetDescription className="sr-only">
+                    Menu de navegação da Veritas Assessoria
+                  </SheetDescription>
                 </SheetHeader>
                 <nav className="flex-1 overflow-y-auto p-6">
                   <div className="space-y-4">
