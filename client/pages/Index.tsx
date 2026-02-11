@@ -200,7 +200,7 @@ const Index = () => {
               <div className="space-y-4">
                 <div className="flex items-center gap-4">
                   <Mail className="h-6 w-6 opacity-60" />
-                  <span>contato.veritasassessoria@gmail.com</span>
+                  <span translate="no">contato.veritasassessoria@gmail.com</span>
                 </div>
                 <div className="flex items-center gap-4">
                   <MessageCircle className="h-6 w-6 opacity-60" />
@@ -234,7 +234,7 @@ const Index = () => {
                   <label className="text-sm font-medium">Mensagem</label>
                   <Textarea placeholder="Descreva brevemente sua necessidade..." className="bg-secondary/50 border-none min-h-[120px]" />
                 </div>
-                <Button className="w-full bg-primary hover:bg-primary/90 text-white py-6 text-lg">
+                <Button className="w-full bg-primary hover:bg-primary/90 text-white py-6 text-lg" translate="no">
                   Enviar Mensagem
                 </Button>
               </form>

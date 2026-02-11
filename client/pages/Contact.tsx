@@ -34,7 +34,7 @@ const ContactPage = () => {
                   </div>
                   <div>
                     <h4 className="font-bold">E-mail</h4>
-                    <p className="text-muted-foreground">contato.veritasassessoria@gmail.com</p>
+                    <p className="text-muted-foreground" translate="no">contato.veritasassessoria@gmail.com</p>
                   </div>
                 </div>
 
@@ -87,7 +87,7 @@ const ContactPage = () => {
                   <label className="text-sm font-medium">Mensagem</label>
                   <Textarea placeholder="Descreva brevemente sua necessidade..." className="bg-white min-h-[150px]" />
                 </div>
-                <Button className="w-full bg-primary hover:bg-primary/90 text-white py-6 text-lg">
+                <Button className="w-full bg-primary hover:bg-primary/90 text-white py-6 text-lg" translate="no">
                   Enviar Solicitação
                 </Button>
               </form>
