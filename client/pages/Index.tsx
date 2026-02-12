@@ -1,12 +1,46 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { Shield, Search, FileText, Home, ArrowRight, MessageCircle, Mail, User } from "lucide-react";
+import { Shield, Search, FileText, Home, ArrowRight, MessageCircle, Mail, User, Send, CheckCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
+import { toast } from "sonner";
 
 const Index = () => {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSuccess, setIsSuccess] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+
+    const formData = new FormData(e.currentTarget);
+    const data = Object.fromEntries(formData.entries());
+
+    try {
+      const response = await fetch("https://formspree.io/f/xpzvbeow", {
+        method: "POST",
+        body: JSON.stringify(data),
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json'
+        }
+      });
+
+      if (response.ok) {
+        setIsSuccess(true);
+        toast.success("Mensagem enviada com sucesso!");
+        (e.target as HTMLFormElement).reset();
+      } else {
+        toast.error("Ocorreu um erro ao enviar. Tente novamente.");
+      }
+    } catch (error) {
+      toast.error("Erro de conexão. Verifique sua internet.");
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
   const services = [
     {
       title: "Perícia Grafotécnica Extrajudicial",
@@ -214,30 +248,50 @@ const Index = () => {
               </Button>
             </div>
             
-            <div className="bg-white text-foreground p-8 rounded-lg shadow-xl">
-              <form className="space-y-4">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  <div className="space-y-2">
-                    <label className="text-sm font-medium">Nome</label>
-                    <Input placeholder="Seu nome completo" className="bg-secondary/50 border-none" />
+            <div className="bg-white text-foreground p-8 rounded-lg shadow-xl min-h-[400px] flex flex-col justify-center">
+              {isSuccess ? (
+                <div className="flex flex-col items-center justify-center text-center space-y-4 animate-in fade-in zoom-in">
+                  <div className="bg-green-100 p-4 rounded-full">
+                    <CheckCircle className="h-12 w-12 text-green-600" />
+                  </div>
+                  <h4 className="text-xl font-bold">Mensagem Enviada!</h4>
+                  <p className="text-muted-foreground">Obrigado. Responderemos em breve.</p>
+                  <Button variant="outline" onClick={() => setIsSuccess(false)}>Enviar outra mensagem</Button>
+                </div>
+              ) : (
+                <form className="space-y-4" onSubmit={handleSubmit}>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div className="space-y-2">
+                      <label className="text-sm font-medium">Nome</label>
+                      <Input name="name" required placeholder="Seu nome completo" className="bg-secondary/50 border-none" />
+                    </div>
+                    <div className="space-y-2">
+                      <label className="text-sm font-medium">E-mail</label>
+                      <Input name="email" required placeholder="seu@email.com" type="email" className="bg-secondary/50 border-none" />
+                    </div>
                   </div>
                   <div className="space-y-2">
-                    <label className="text-sm font-medium">E-mail</label>
-                    <Input placeholder="seu@email.com" type="email" className="bg-secondary/50 border-none" />
+                    <label className="text-sm font-medium">Assunto</label>
+                    <Input name="subject" required placeholder="Como podemos ajudar?" className="bg-secondary/50 border-none" />
                   </div>
-                </div>
-                <div className="space-y-2">
-                  <label className="text-sm font-medium">Assunto</label>
-                  <Input placeholder="Como podemos ajudar?" className="bg-secondary/50 border-none" />
-                </div>
-                <div className="space-y-2">
-                  <label className="text-sm font-medium">Mensagem</label>
-                  <Textarea placeholder="Descreva brevemente sua necessidade..." className="bg-secondary/50 border-none min-h-[120px]" />
-                </div>
-                <Button className="w-full bg-primary hover:bg-primary/90 text-white py-6 text-lg" translate="no">
-                  Enviar Mensagem
-                </Button>
-              </form>
+                  <div className="space-y-2">
+                    <label className="text-sm font-medium">Mensagem</label>
+                    <Textarea name="message" required placeholder="Descreva brevemente sua necessidade..." className="bg-secondary/50 border-none min-h-[120px]" />
+                  </div>
+                  <Button
+                    type="submit"
+                    disabled={isSubmitting}
+                    className="w-full bg-primary hover:bg-primary/90 text-white py-6 text-lg flex items-center justify-center gap-2"
+                    translate="no"
+                  >
+                    {isSubmitting ? "Enviando..." : (
+                      <>
+                        Enviar Mensagem <Send className="h-5 w-5" />
+                      </>
+                    )}
+                  </Button>
+                </form>
+              )}
             </div>
           </div>
         </div>
