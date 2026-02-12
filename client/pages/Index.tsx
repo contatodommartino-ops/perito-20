@@ -19,7 +19,7 @@ const Index = () => {
     const data = Object.fromEntries(formData.entries());
 
     try {
-      const response = await fetch("https://formspree.io/f/xpzvbeow", {
+      const response = await fetch("https://formspree.io/f/xjgegqoo", {
         method: "POST",
         body: JSON.stringify(data),
         headers: {

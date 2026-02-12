@@ -17,9 +17,8 @@ const ContactPage = () => {
     const data = Object.fromEntries(formData.entries());
 
     try {
-      // Usando Formspree (Serviço gratuito para sites estáticos no GitHub)
-      // Substitua 'xpzvbeow' pelo seu ID do Formspree se desejar personalizar
-      const response = await fetch("https://formspree.io/f/xpzvbeow", {
+      // Usando o seu ID oficial do Formspree
+      const response = await fetch("https://formspree.io/f/xjgegqoo", {
         method: "POST",
         body: JSON.stringify(data),
         headers: {
