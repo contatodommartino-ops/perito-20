@@ -106,47 +106,39 @@ const ContactPage = () => {
             <div className="bg-secondary/30 p-8 rounded-xl border border-border shadow-sm">
               <h3 className="text-2xl font-bold mb-6">Envie uma Mensagem</h3>
 
-              {isSuccess ? (
-                <div className="flex flex-col items-center justify-center py-12 text-center space-y-4 animate-in fade-in zoom-in">
-                  <div className="bg-green-100 p-4 rounded-full">
-                    <CheckCircle className="h-12 w-12 text-green-600" />
-                  </div>
-                  <h4 className="text-xl font-bold">Mensagem Enviada!</h4>
-                  <p className="text-muted-foreground">Obrigado pelo contato. Responderemos em breve.</p>
-                  <Button variant="outline" onClick={() => setIsSuccess(false)}>Enviar outra mensagem</Button>
+              <form
+                action="https://formspree.io/f/xjgegqoo"
+                method="POST"
+                className="space-y-6"
+              >
+                <div className="space-y-2">
+                  <label className="text-sm font-medium">Nome Completo</label>
+                  <Input name="name" required placeholder="Como devemos chamar você?" className="bg-white" />
                 </div>
-              ) : (
-                <form className="space-y-6" onSubmit={handleSubmit}>
-                  <div className="space-y-2">
-                    <label className="text-sm font-medium">Nome Completo</label>
-                    <Input name="name" required placeholder="Como devemos chamar você?" className="bg-white" />
-                  </div>
-                  <div className="space-y-2">
-                    <label className="text-sm font-medium">E-mail</label>
-                    <Input name="email" required placeholder="seu@email.com" type="email" className="bg-white" />
-                  </div>
-                  <div className="space-y-2">
-                    <label className="text-sm font-medium">Assunto</label>
-                    <Input name="subject" required placeholder="Ex: Orçamento Perícia Grafotécnica" className="bg-white" />
-                  </div>
-                  <div className="space-y-2">
-                    <label className="text-sm font-medium">Mensagem</label>
-                    <Textarea name="message" required placeholder="Descreva brevemente sua necessidade..." className="bg-white min-h-[150px]" />
-                  </div>
-                  <Button
-                    type="submit"
-                    disabled={isSubmitting}
-                    className="w-full bg-primary hover:bg-primary/90 text-white py-6 text-lg flex items-center justify-center gap-2"
-                    translate="no"
-                  >
-                    {isSubmitting ? "Enviando..." : (
-                      <>
-                        Enviar Solicitação <Send className="h-5 w-5" />
-                      </>
-                    )}
-                  </Button>
-                </form>
-              )}
+                <div className="space-y-2">
+                  <label className="text-sm font-medium">E-mail</label>
+                  <Input name="email" required placeholder="seu@email.com" type="email" className="bg-white" />
+                </div>
+                <div className="space-y-2">
+                  <label className="text-sm font-medium">Assunto</label>
+                  <Input name="subject" required placeholder="Ex: Orçamento Perícia Grafotécnica" className="bg-white" />
+                </div>
+                <div className="space-y-2">
+                  <label className="text-sm font-medium">Mensagem</label>
+                  <Textarea name="message" required placeholder="Descreva brevemente sua necessidade..." className="bg-white min-h-[150px]" />
+                </div>
+
+                {/* Honeypot para evitar spam */}
+                <input type="hidden" name="_gotcha" style={{ display: 'none' }} />
+
+                <Button
+                  type="submit"
+                  className="w-full bg-primary hover:bg-primary/90 text-white py-6 text-lg flex items-center justify-center gap-2"
+                  translate="no"
+                >
+                  Enviar Solicitação <Send className="h-5 w-5" />
+                </Button>
+              </form>
             </div>
           </div>
         </div>
