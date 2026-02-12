@@ -21,10 +21,9 @@ const Index = () => {
     try {
       const response = await fetch("https://formspree.io/f/xjgegqoo", {
         method: "POST",
-        body: JSON.stringify(data),
+        body: formData,
         headers: {
-          'Accept': 'application/json',
-          'Content-Type': 'application/json'
+          'Accept': 'application/json'
         }
       });
 
@@ -33,7 +32,8 @@ const Index = () => {
         toast.success("Mensagem enviada com sucesso!");
         (e.target as HTMLFormElement).reset();
       } else {
-        toast.error("Ocorreu um erro ao enviar. Tente novamente.");
+        const errorData = await response.json();
+        toast.error(errorData.error || "Ocorreu um erro ao enviar. Tente novamente.");
       }
     } catch (error) {
       toast.error("Erro de conexão. Verifique sua internet.");
