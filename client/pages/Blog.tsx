@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { Calendar, ArrowRight } from "lucide-react";
+import SEO from "@/components/SEO";
 
 const BlogPage = () => {
   const posts = [
@@ -29,6 +30,11 @@ const BlogPage = () => {
 
   return (
     <div className="flex flex-col w-full">
+      <SEO
+        title="Blog Técnico"
+        description="Artigos e análises sobre perícia grafotécnica, documentoscopia, assistência técnica e investigação técnica."
+        canonicalPath="/blog"
+      />
       <section className="bg-primary text-white py-20">
         <div className="container mx-auto px-4 text-center">
           <h1 className="text-4xl md:text-5xl font-bold mb-6">Blog Técnico</h1>

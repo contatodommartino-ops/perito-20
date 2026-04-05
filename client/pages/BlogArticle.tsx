@@ -1,12 +1,14 @@
 import { Link, useParams } from "react-router-dom";
 import { Calendar, ArrowLeft } from "lucide-react";
 import NotFound from "./NotFound";
+import SEO from "@/components/SEO";
 
 const articles: Record<
   string,
   {
     title: string;
     date: string;
+    publishedAt: string;
     category: string;
     intro: string;
     content: { heading: string; body: string[] }[];
@@ -15,6 +17,7 @@ const articles: Record<
   "assistente-tecnico-pericia-grafotecnica": {
     title: "O papel do assistente técnico na perícia grafotécnica judicial",
     date: "15 Mai, 2024",
+    publishedAt: "2024-05-15",
     category: "Assistência Técnica",
     intro:
       "Entenda como a atuação de um assistente técnico pode ser determinante para o resultado de um processo envolvendo assinaturas contestadas.",
@@ -38,6 +41,7 @@ const articles: Record<
   "fraudes-documentais-contratos": {
     title: "Como identificar as fraudes documentais mais comuns em contratos",
     date: "02 Mai, 2024",
+    publishedAt: "2024-05-02",
     category: "Documentoscopia",
     intro:
       "Rasuras, montagens e alterações de suporte. Conheça as técnicas utilizadas por fraudadores e como a documentoscopia atua para detectá-las.",
@@ -61,6 +65,7 @@ const articles: Record<
   "validade-pericia-grafotecnica-extrajudicial": {
     title: "A validade da perícia grafotécnica realizada de forma extrajudicial",
     date: "20 Abr, 2024",
+    publishedAt: "2024-04-20",
     category: "Grafotécnica",
     intro:
       "Muitos acreditam que o laudo só tem valor se for judicial. Neste artigo, desmistificamos o uso do laudo extrajudicial em negociações e acordos.",
@@ -89,8 +94,39 @@ const BlogArticlePage = () => {
 
   if (!article) return <NotFound />;
 
+  const description = `${article.intro} Conteúdo técnico e objetivo sobre ${article.category.toLowerCase()}.`;
+  const canonicalPath = `/blog/${slug}`;
+  const canonicalUrl = typeof window !== "undefined" ? `${window.location.origin}${canonicalPath}` : canonicalPath;
+  const articleSchema = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: article.title,
+    description,
+    datePublished: article.publishedAt,
+    dateModified: article.publishedAt,
+    author: {
+      "@type": "Organization",
+      name: "Veritas Assessoria Pericial",
+    },
+    publisher: {
+      "@type": "Organization",
+      name: "Veritas Assessoria Pericial",
+    },
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": canonicalUrl,
+    },
+  };
+
   return (
     <div className="flex flex-col w-full">
+      <SEO
+        title={article.title}
+        description={description}
+        canonicalPath={canonicalPath}
+        ogType="article"
+        structuredData={articleSchema}
+      />
       <section className="bg-primary text-white py-16">
         <div className="container mx-auto px-4 max-w-4xl">
           <Link to="/blog" className="inline-flex items-center gap-2 text-sm text-white/70 hover:text-white mb-6">
