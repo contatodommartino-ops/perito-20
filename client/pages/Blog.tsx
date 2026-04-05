@@ -1,22 +1,25 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { Calendar, User, ArrowRight } from "lucide-react";
+import { Calendar, ArrowRight } from "lucide-react";
 
 const BlogPage = () => {
   const posts = [
     {
+      slug: "assistente-tecnico-pericia-grafotecnica",
       title: "O papel do assistente técnico na perícia grafotécnica judicial",
       excerpt: "Entenda como a atuação de um assistente técnico pode ser determinante para o resultado de um processo envolvendo assinaturas contestadas.",
       date: "15 Mai, 2024",
       category: "Assistência Técnica",
     },
     {
+      slug: "fraudes-documentais-contratos",
       title: "Como identificar as fraudes documentais mais comuns em contratos",
       excerpt: "Rasuras, montagens e alterações de suporte. Conheça as técnicas utilizadas por fraudadores e como a documentoscopia atua para detectá-las.",
       date: "02 Mai, 2024",
       category: "Documentoscopia",
     },
     {
+      slug: "validade-pericia-grafotecnica-extrajudicial",
       title: "A validade da perícia grafotécnica realizada de forma extrajudicial",
       excerpt: "Muitos acreditam que o laudo só tem valor se for judicial. Neste artigo, desmistificamos o uso do laudo extrajudicial em negociações e acordos.",
       date: "20 Abr, 2024",
@@ -51,7 +54,7 @@ const BlogPage = () => {
                   <p className="text-muted-foreground text-base mb-8 flex-grow">
                     {post.excerpt}
                   </p>
-                  <Link to="#" className="inline-flex items-center text-sm font-bold text-primary group-hover:gap-2 transition-all p-3 border border-primary/20 rounded-md hover:bg-primary/5">
+                  <Link to={`/blog/${post.slug}`} className="inline-flex items-center text-sm font-bold text-primary group-hover:gap-2 transition-all p-3 border border-primary/20 rounded-md hover:bg-primary/5">
                     Ler artigo completo <ArrowRight className="ml-1 h-4 w-4" />
                   </Link>
                 </div>
