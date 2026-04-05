@@ -169,7 +169,6 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
             <div className="space-y-4">
               <h4 className="font-semibold text-lg">Contato</h4>
               <div className="flex flex-col space-y-2 text-sm text-white/60">
-                <p>Curitiba - PR e Região</p>
                 <p translate="no">contato.veritasassessoria@gmail.com</p>
                 <p>+55 41 99629-7915</p>
               </div>
